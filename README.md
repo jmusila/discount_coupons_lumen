@@ -1,24 +1,33 @@
-# Lumen PHP Framework
+## Discount Coupons Lumen API
 
-[![Build Status](https://travis-ci.org/laravel/lumen-framework.svg)](https://travis-ci.org/laravel/lumen-framework)
-[![Total Downloads](https://img.shields.io/packagist/dt/laravel/framework)](https://packagist.org/packages/laravel/lumen-framework)
-[![Latest Stable Version](https://img.shields.io/packagist/v/laravel/framework)](https://packagist.org/packages/laravel/lumen-framework)
-[![License](https://img.shields.io/packagist/l/laravel/framework)](https://packagist.org/packages/laravel/lumen-framework)
+### Getting Started
+- Clone this repository
+    `$ git clone https://github.com/jmusila/discount_coupons_lumen.git`
+- Navigate to the folder `discount_coupons_lumen`
 
-Laravel Lumen is a stunningly fast PHP micro-framework for building web applications with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Lumen attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as routing, database abstraction, queueing, and caching.
+### Installation
+- After cloning this repo:
+- Create .env on the root directory and copy .env_exmaple content to it
+- Create database and add database configurations on the .env file
+- Run $ composer install to install dependancies
 
-## Official Documentation
 
-Documentation for the framework can be found on the [Lumen website](https://lumen.laravel.com/docs).
+### Testing on Postman
+- Run `$ php -S localhost:8000 -t public` to start the server
+- Test the following endpoint:
 
-## Contributing
+| EndPoint                       | Functionality                           |
+| -------------------------------|:---------------------------------------:|
+| POST /api/payment_calculation  | Returns Discounted Total Cost           |
+|                                                                          |
 
-Thank you for considering contributing to Lumen! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+- Request Body Example
+```
+{
+	"cart_total" : 5000,
+	"gift_card_ids" : [6, 7, 8]
+}
+```
 
-## Security Vulnerabilities
+- [Postman Collection](https://www.getpostman.com/collections/e68c244fb867c20e22bf)
 
-If you discover a security vulnerability within Lumen, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Lumen framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
